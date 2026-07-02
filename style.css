@@ -1,0 +1,210 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#ffb6d9,#ffe5f1);
+    overflow:hidden;
+    padding:20px;
+}
+
+/* Fondo */
+
+.background-hearts::before{
+    content:"❤️ ❤️ 💕 ❤️ 💖 💗 ❤️ 💕";
+    position:fixed;
+    inset:0;
+    font-size:30px;
+    opacity:.12;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    animation:float 18s linear infinite;
+    pointer-events:none;
+}
+
+@keyframes float{
+    0%{
+        transform:translateY(100vh);
+    }
+    100%{
+        transform:translateY(-120vh);
+    }
+}
+
+.container{
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+}
+
+/* SOBRE */
+
+.envelope{
+    width:min(220px,70vw);
+    aspect-ratio:22/15;
+    background:#ff5d8f;
+    border-radius:10px;
+    position:relative;
+    cursor:pointer;
+    transition:1s;
+    box-shadow:0 15px 40px rgba(0,0,0,.2);
+}
+
+.envelope::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    width:0;
+    height:0;
+    border-left:calc(min(220px,70vw)/2) solid transparent;
+    border-right:calc(min(220px,70vw)/2) solid transparent;
+    border-top:calc(min(220px,70vw)/3) solid #ff7aa6;
+    transform-origin:top;
+    transition:1s;
+}
+
+.heart{
+    height:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:clamp(40px,8vw,60px);
+}
+
+button{
+    margin-top:35px;
+    padding:15px 30px;
+    width:min(320px,90%);
+    border:none;
+    border-radius:40px;
+    background:#ff4d88;
+    color:white;
+    font-size:clamp(16px,2vw,20px);
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    transform:scale(1.05);
+}
+
+/* CARTA */
+
+.letter{
+    position:fixed;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%) scale(.2);
+
+    width:min(700px,92vw);
+
+    max-height:85vh;
+
+    overflow-y:auto;
+
+    background:white;
+
+    padding:35px;
+
+    border-radius:20px;
+
+    box-shadow:0 20px 60px rgba(0,0,0,.25);
+
+    opacity:0;
+
+    transition:1s;
+
+    z-index:100;
+}
+
+/* Scroll bonito */
+
+.letter::-webkit-scrollbar{
+    width:8px;
+}
+
+.letter::-webkit-scrollbar-thumb{
+    background:#ff8ab5;
+    border-radius:10px;
+}
+
+.letter h1{
+    color:#ff3f78;
+    margin-bottom:20px;
+    text-align:center;
+    font-size:clamp(28px,5vw,42px);
+}
+
+.letter p{
+    margin:15px 0;
+    font-size:clamp(16px,2vw,20px);
+    line-height:1.9;
+    color:#555;
+    text-align:justify;
+}
+
+.show{
+    opacity:1;
+    transform:translate(-50%,-50%) scale(1);
+}
+
+.open::before{
+    transform:rotateX(180deg);
+}
+
+/* Celulares */
+
+@media (max-width:600px){
+
+    body{
+        padding:15px;
+    }
+
+    .letter{
+        width:95vw;
+        max-height:90vh;
+        padding:25px;
+        border-radius:15px;
+    }
+
+    button{
+        margin-top:25px;
+    }
+
+}
+
+/* Pantallas grandes */
+
+@media (min-width:1200px){
+
+    .letter{
+        width:800px;
+    }
+
+}
+.firma{
+    text-align:center;
+    margin-top:40px;
+    font-style:italic;
+    color:#777;
+}
+
+.firma strong{
+    display:block;
+    margin-top:8px;
+    font-size:28px;
+    color:#ff3f78;
+    letter-spacing:3px;
+    font-family:Georgia, serif;
+}
