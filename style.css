@@ -194,10 +194,10 @@ button:hover{
 
 }
 .firma{
+    color:#ff3f78;
+    margin-bottom:20px;
     text-align:center;
-    margin-top:40px;
-    font-style:italic;
-    color:#777;
+    font-size:clamp(28px,5vw,42px);
 }
 
 .firma strong{

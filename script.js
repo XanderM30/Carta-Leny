@@ -4,7 +4,7 @@ function abrirCarta(){
 
     setTimeout(()=>{
 
-        document.getElementById("letter").classList.add("show");
+        document.getElementById("letter").classList.add("show"); //Esta línea hace que la carta aparezca después de 700 milisegundos
 
         document.getElementById("btn").style.display="none";
 
